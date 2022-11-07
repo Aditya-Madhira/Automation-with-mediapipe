@@ -9,5 +9,5 @@
 </div>
 
 
-### :writing_hand: Blog Posts :
-#REsearch Paper- (https://www.ijraset.com/best-journal/computer-automation-using-gesture-recognition-and-mediapipe)
+### :writing_hand: Research Paper :
+ (https://www.ijraset.com/best-journal/computer-automation-using-gesture-recognition-and-mediapipe)
