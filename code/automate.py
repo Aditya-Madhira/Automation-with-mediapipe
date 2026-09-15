@@ -16,9 +16,10 @@ hands = mpHands.Hands(max_num_hands=1, min_detection_confidence=0.7)
 mpDraw = mp.solutions.drawing_utils
 
 # Load the gesture recognizer model
-model =  tf.keras.models.load_model(r'C:\Users\Aditya\Desktop\Myproject\mets\mp_hand_gesture')
+_METS = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'mets')
+model = tf.keras.models.load_model(os.path.join(_METS, 'mp_hand_gesture'))
 # Load class names
-f = open(r'C:\Users\Aditya\Desktop\Myproject\mets\gesture.names', 'r')
+f = open(os.path.join(_METS, 'gesture.names'), 'r')
 classNames = f.read().split('\n')
 f.close()
 
@@ -38,13 +39,13 @@ def startnewcap(myl):
         if "Chrome" in i:
             indval = myl.index(i)
             if indval == 0:
-                tupval="os.startfile(r'C:\Program Files/Google/Chrome/Application/chrome.exe')"
+                tupval="os.startfile(r'C:/Program Files/Google/Chrome/Application/chrome.exe')"
             if indval==1:
-                tdownval="os.startfile(r'C:\Program Files/Google/Chrome/Application/chrome.exe')"
+                tdownval="os.startfile(r'C:/Program Files/Google/Chrome/Application/chrome.exe')"
             if indval==2:
-                stval="os.startfile(r'C:\Program Files/Google/Chrome/Application/chrome.exe')"
+                stval="os.startfile(r'C:/Program Files/Google/Chrome/Application/chrome.exe')"
             if indval==3:
-                rval="os.startfile(r'C:\Program Files/Google/Chrome/Application/chrome.exe')"
+                rval="os.startfile(r'C:/Program Files/Google/Chrome/Application/chrome.exe')"
         elif "Youtube" in i:
             indval = myl.index(i)
             if indval == 0:
@@ -68,16 +69,16 @@ def startnewcap(myl):
 
 
 
-        elif "Trending" in i:
+        elif "Bookmark" in i:
             indval = myl.index(i)
             if indval == 0:
-                tupval = "sel_code.launchBrowser()"
+                tupval = "sel_code.open_bookmark()"
             if indval == 1:
-                tdownval = "sel_code.launchBrowser()"
+                tdownval = "sel_code.open_bookmark()"
             if indval == 2:
-                stval = "sel_code.launchBrowser()"
+                stval = "sel_code.open_bookmark()"
             if indval == 3:
-                rval = "sel_code.launchBrowser()"
+                rval = "sel_code.open_bookmark()"
 
 
     newcap = cv2.VideoCapture(0)

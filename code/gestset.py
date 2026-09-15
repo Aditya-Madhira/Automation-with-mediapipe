@@ -61,19 +61,19 @@ class SetGesturewindow(QWidget):
         #combox
         self.cb1=QComboBox(self)
         self.cb1.move(150,80)
-        self.cb1.addItems(["Open Notepad","Open Chrome","Open Youtube","Play Trending film"])
+        self.cb1.addItems(["Open Notepad","Open Chrome","Open Youtube","Open bookmarked link"])
         self.cb1.show()
         self.cb2 = QComboBox(self)
         self.cb2.move(150, 140)
-        self.cb2.addItems(["Open Notepad", "Open Chrome","Open Youtube","Play Trending film"])
+        self.cb2.addItems(["Open Notepad", "Open Chrome","Open Youtube","Open bookmarked link"])
         self.cb2.show()
         self.cb3 = QComboBox(self)
         self.cb3.move(150, 200)
-        self.cb3.addItems(["Open Notepad", "Open Chrome","Open Youtube","Play Trending film"])
+        self.cb3.addItems(["Open Notepad", "Open Chrome","Open Youtube","Open bookmarked link"])
         self.cb3.show()
         self.cb4 = QComboBox(self)
         self.cb4.move(150, 260)
-        self.cb4.addItems(["Open Notepad", "Open Chrome","Open Youtube","Play Trending film"])
+        self.cb4.addItems(["Open Notepad", "Open Chrome","Open Youtube","Open bookmarked link"])
         self.cb4.show()
 
 

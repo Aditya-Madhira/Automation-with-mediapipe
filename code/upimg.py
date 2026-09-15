@@ -1,3 +1,4 @@
+import os
 import sys
 from PyQt5.QtWidgets import  QApplication, QLabel, QFileDialog, QAction,QLineEdit
 from PyQt5.QtWidgets import *
@@ -12,7 +13,7 @@ username=""
 
 class UploadWindow(QMainWindow):
     if not firebase_admin._apps:
-        cred = credentials.Certificate(r'C:\Users\Aditya\Desktop\Myproject\code\serviceaccountcred.json')
+        cred = credentials.Certificate(os.environ.get('FIREBASE_CREDENTIALS', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'serviceaccountcred.json')))
         initialize_app(cred)
 
 

@@ -1,22 +1,21 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.common.by import By
+"""
+Opens a bookmarked link in the default browser.
+
+The URL is read from the BOOKMARK_URL environment variable so the action can be
+pointed at whatever the user wants without editing the code.
+"""
+
+import os
+import webbrowser
+
+DEFAULT_URL = "https://www.wikipedia.org/"
+
 
 def launchBrowser():
-
-    s = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=s)
-    driver.maximize_window()
-    opt = webdriver.ChromeOptions()
-    opt.add_argument("--incognito")
-    driver.get(r'https://fmovies.hn/movie/watch-spider-man-no-way-home-full-71326')
-    driver.find_element_by_id(r'watch-7178131').click()
+    """Open the configured bookmark. Kept under the old name for compatibility."""
+    open_bookmark()
 
 
-
-    while(True):
-        pass
-
-
-
+def open_bookmark():
+    url = os.environ.get("BOOKMARK_URL", DEFAULT_URL)
+    webbrowser.open(url)
